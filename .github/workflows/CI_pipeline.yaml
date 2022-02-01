@@ -19,7 +19,7 @@ jobs:
           working-directory: capstone_project/hello-world
           run: npm install .
         - name: test
-          working-directory: capstone_prohect/hello-world
+          working-directory: capstone_project/hello-world
           run: npm test
     job2:
       needs: [job1]
@@ -27,5 +27,6 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
-      - run: |
+      - name: Docker Build
+        run: |
           docker build ./capstone_project/hello-world -t node_app
