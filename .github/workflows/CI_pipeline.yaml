@@ -7,30 +7,24 @@ on:
     branches: [ main ]
 
 jobs:
-  job1:
-    name: Build & Test
-    build:
-
-      runs-on: ubuntu-latest
-
-      steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.13.1-alpine'
-      - run: npm install
-      - run: npm test
-  
-  job2:
-    needs: [job1]
-    name: Build Container
+    job1:
       build:
+        name: Build & Test
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: '16.13.1-alpine'
+        - run: npm install
+        - run: npm test
+    
+    job2:
+      needs: [job1]
+      build:
+        name: Build Container
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
         - run: |
-            docker build ./capstone_project/hello-world -t node_app
-
-
-    
-
+          docker build ./capstone_project/hello-world -t node_app
