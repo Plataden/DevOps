@@ -22,8 +22,8 @@ jobs:
       - run: npm test
   
   job2:
-    name: Build Container
     needs: [job1]
+    name: Build Container
       build:
         runs-on: ubuntu-latest
         steps:
