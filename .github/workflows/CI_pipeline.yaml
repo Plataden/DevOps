@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '16.13.1'
       - run: npm install ./capstone_project/hello-world
-      - run: npm test ./capstone_project/hello-world
+      - run: npm test
     
     job2:
       needs: [job1]
