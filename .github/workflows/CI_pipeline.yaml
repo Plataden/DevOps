@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16.13.1'
-      - run: npm install ./capstone_project/hello-world
-      - run: npm test
+      - run: cd ./capstone_project/hello-world
+      - run: npm install .
+      - run: npm test 
     
     job2:
       needs: [job1]
