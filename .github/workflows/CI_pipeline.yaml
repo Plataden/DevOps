@@ -25,4 +25,4 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - run: |
-        docker build ./capstone_project/hello-world -t node_app
+          docker build ./capstone_project/hello-world -t node_app

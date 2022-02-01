@@ -1,7 +1,5 @@
 FROM node:16.13.1-alpine AS build
 
-EXPOSE 3000
-
 WORKDIR /tmp/build
 
 COPY . .
