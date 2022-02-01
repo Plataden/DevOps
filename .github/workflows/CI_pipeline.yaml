@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: '16.13.1'
       - run: cd capstone_project/hello-world
+      - run: pwd
       - run: npm install .
       - run: npm test 
     job2:
