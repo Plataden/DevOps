@@ -8,6 +8,6 @@
       become_user: root
       lineinfile: 
         path: /usr/src/app/src/App.js
-        regexp: 'Hello World' 
+        regexp: 'Hello World!' 
         line: "Hello DevOps!"
         backrefs: yes
