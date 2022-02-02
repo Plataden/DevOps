@@ -1,0 +1,13 @@
+- name: Ansible Playbook
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ping check using ping module
+      ping:
+    - name: Change Hello World! to Hello DevOps!
+      become_user: root
+      lineinfile: 
+        path: /usr/src/app/src/App.js
+        regexp: 'Hello World' 
+        line: "Hello DevOps!"
+        backrefs: yes
