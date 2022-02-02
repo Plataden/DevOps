@@ -1,13 +1,15 @@
-FROM node:16.13.1-alpine AS build
+FROM node:16.13.1-alpine
 
-WORKDIR /tmp/build
+WORKDIR /usr/src/app
 
 COPY . .
 
 RUN npm i -g npm; npm i; npm run build
 
-FROM nginx AS final
+CMD npm start
 
-WORKDIR /usr/share/nginx/html
+# FROM nginx AS final
 
-COPY --from=build /tmp/build/build .
+# WORKDIR /usr/share/nginx/html
+
+# COPY --from=build /tmp/build/build .
