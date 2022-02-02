@@ -25,7 +25,6 @@ RUN npm --version
 WORKDIR /home/ansible_controller
 
 COPY startup.sh .
-COPY run_and_server.sh .
 
 RUN useradd -rm -d /home/ansible_controller -s /bin/bash -g root -G sudo -u 1001 ansible_controller
 RUN echo ansible_controller:12345 | chpasswd
